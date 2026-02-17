@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Colors */
+  --primary-red: #E50012;
+  --dark-red: #B31A1C;
+  --deep-pink: #B31A1C;
+  --light-pink: #E34045;
+  --main-font-color: #1A202C;
+  --base-color: #ffffff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Fonts */
+  --font-sans-jp: var(--font-noto-sans-jp);
+  --font-sans-en: var(--font-lato);
+  --font-logo: var(--font-alfa-slab-one);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Typography Sizes */
+  --font-size-header-large: 128px;
+  --font-size-header-medium: 70px;
+  --font-size-header-japanese: 30px;
+  --font-size-logo: 28px;
+  --font-size-nav-en: 16px;
+  --font-size-nav-jp: 10px;
+  --font-size-cta-small: 14px;
+  --font-size-service-card-title: 24px;
+  --font-size-service-card-text: 15px;
+  --font-size-about-furigana: 20px;
+  --font-size-about-name: 40px;
+  --font-size-about-affiliation: 24px;
+  --font-size-about-heading: 32px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--base-color);
+  color: var(--main-font-color);
+  font-family: var(--font-noto-sans-jp), var(--font-lato), sans-serif;
+}
+
+/* Utility classes for custom typography */
+.header-large {
+  font-size: var(--font-size-header-large);
+  font-weight: 700;
+  font-family: var(--font-lato);
+}
+
+.header-medium {
+  font-size: var(--font-size-header-medium);
+  font-weight: 400;
+  font-family: var(--font-lato);
+}
+
+.header-japanese {
+  font-size: var(--font-size-header-japanese);
+  font-weight: 500;
+  font-family: var(--font-noto-sans-jp);
+}
+
+/* Metalic Red Gradient */
+.bg-metalic-red {
+  background: linear-gradient(
+    90deg,
+    #8B0000 0%,
+    #E50012 45%,
+    #FF7F7F 50%,
+    #F24049 55%,
+    #8B0000 100%
+  );
+}
+
+/* Shine Animation for CTA Button */
+.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.shine-effect:hover::before {
+  animation: shine 0.8s ease-in-out;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* Social Icons */
+.social-icon {
+  border: 3px solid;
+  border-image: linear-gradient(
+    90deg,
+    #8B0000 0%,
+    #E50012 45%,
+    #FF7F7F 50%,
+    #F24049 55%,
+    #8B0000 100%
+  ) 1;
+  filter: drop-shadow(3px 3px 0 #4E0208);
+  transition: transform 0.2s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
 }
