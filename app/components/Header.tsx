@@ -36,7 +36,7 @@ export default function Header() {
         <div className="p-2.5">
           <a
             href="#"
-            className="text-xl lg:text-[28px] font-normal text-[#E50012]"
+            className="text-h5 font-bold text-primary-red"
             style={{ fontFamily: 'var(--font-alfa-slab-one)' }}
           >
             Sidekick
@@ -51,12 +51,12 @@ export default function Header() {
               <a
                 key={item.en}
                 href={item.href}
-                className="flex flex-col items-center gap-1 transition-colors hover:text-[#E50012]"
+                className="flex flex-col items-center gap-1 transition-colors hover:text-primary-red"
               >
-                <span className="text-base font-normal" style={{ fontFamily: 'var(--font-lato)' }}>
+                <span className="text-body font-lato font-medium">
                   {item.en}
                 </span>
-                <span className="text-[10px] font-normal opacity-80" style={{ fontFamily: 'var(--font-noto-sans-jp)' }}>
+                <span className="text-xs-custom font-noto font-medium opacity-80">
                   {item.jp}
                 </span>
               </a>
@@ -74,17 +74,17 @@ export default function Header() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-0.5 w-6 bg-[#1A202C] transition-transform ${
+            className={`block h-0.5 w-6 bg-main transition-transform ${
               isMobileMenuOpen ? 'translate-y-2 rotate-45' : ''
             }`}
           ></span>
           <span
-            className={`block h-0.5 w-6 bg-[#1A202C] transition-opacity ${
+            className={`block h-0.5 w-6 bg-main transition-opacity ${
               isMobileMenuOpen ? 'opacity-0' : ''
             }`}
           ></span>
           <span
-            className={`block h-0.5 w-6 bg-[#1A202C] transition-transform ${
+            className={`block h-0.5 w-6 bg-main transition-transform ${
               isMobileMenuOpen ? '-translate-y-2 -rotate-45' : ''
             }`}
           ></span>
@@ -100,12 +100,12 @@ export default function Header() {
                 key={item.en}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex flex-col gap-1 border-b border-gray-100 pb-4 transition-colors hover:text-[#E50012]"
+                className="flex flex-col gap-1 border-b border-gray-100 pb-4 transition-colors hover:text-primary-red"
               >
-                <span className="text-base font-normal" style={{ fontFamily: 'var(--font-lato)' }}>
+                <span className="text-body font-lato font-regular">
                   {item.en}
                 </span>
-                <span className="text-[10px] font-normal opacity-60" style={{ fontFamily: 'var(--font-noto-sans-jp)' }}>
+                <span className="text-xs-custom font-noto font-regular opacity-60">
                   {item.jp}
                 </span>
               </a>

@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Service from "./components/Service";
 import About from "./components/About";
+import Pricing from "./components/Pricing";
 
 export default function Home() {
   return (
@@ -17,11 +18,10 @@ export default function Home() {
         {/* About Section */}
         <About />
 
-        {/* Other Sections - Placeholders */}
-        <section id="pricing" className="flex h-screen items-center justify-center">
-          <h2 className="text-3xl">Pricing Section</h2>
-        </section>
+        {/* Pricing Section */}
+        <Pricing />
 
+        {/* Other Sections - Placeholders */}
         <section id="portfolio" className="flex h-screen items-center justify-center bg-gray-50">
           <h2 className="text-3xl">Portfolio Section</h2>
         </section>

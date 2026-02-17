@@ -21,21 +21,15 @@ const services = [
 
 export default function Service() {
   return (
-    <section id="service" className="relative overflow-hidden bg-white py-10 lg:py-16">
+    <section id="service" className="relative overflow-hidden bg-white py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-8">
           {/* Section Header */}
           <div className="flex flex-col items-center gap-2 text-center">
-            <h2
-              className="text-4xl lg:text-[70px] font-normal text-[#B31A1C]"
-              style={{ fontFamily: 'var(--font-lato)' }}
-            >
+            <h2 className="text-h2 font-lato font-regular text-dark-red">
               SERVICE
             </h2>
-            <p
-              className="text-xl lg:text-[30px] font-medium text-[#1A202C]"
-              style={{ fontFamily: 'var(--font-noto-sans-jp)' }}
-            >
+            <p className="text-h5 font-noto font-medium text-main">
               起業家・新規事業のためのWebサイト制作
             </p>
           </div>
@@ -45,7 +39,7 @@ export default function Service() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-4.25 rounded-xl bg-white p-6 text-center"
+                className="flex flex-col items-center gap-4 rounded-xl bg-white p-6 text-center"
               >
                 <Image
                   src={service.icon}
@@ -54,16 +48,10 @@ export default function Service() {
                   alt={service.title}
                   className="object-contain"
                 />
-                <h3
-                  className="text-[24px] font-semibold text-[#1A202C]"
-                  style={{ fontFamily: 'var(--font-noto-sans-jp)' }}
-                >
+                <h3 className="text-h5 font-noto font-semibold text-main">
                   {service.title}
                 </h3>
-                <p
-                  className="text-[15px] font-normal leading-relaxed text-[#1A202C] opacity-85"
-                  style={{ fontFamily: 'var(--font-noto-sans-jp)' }}
-                >
+                <p className="text-body font-noto font-medium text-main opacity-85 leading-relaxed">
                   {service.description}
                 </p>
               </div>

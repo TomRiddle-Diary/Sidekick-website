@@ -17,107 +17,88 @@ const aboutContent = [
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#E50012] py-16 lg:py-20">
+    <section id="about" className="relative overflow-hidden bg-dark-red py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         {/* Section Title */}
-        <h2
-          className="mb-12 text-center text-6xl font-bold text-white lg:mb-16 lg:text-[128px]"
-          style={{ fontFamily: 'var(--font-lato)' }}
-        >
+        <h2 className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8">
           ABOUT
         </h2>
 
         {/* Content */}
         <div className="rounded-xl bg-white px-6 py-8 lg:px-20 lg:py-12">
-          <div className="flex flex-col items-start gap-4 lg:flex-row lg:gap-28">
+          <div className="flex flex-col items-start gap-8 lg:flex-row lg:gap-28">
             {/* Left Content */}
             <div className="flex flex-col items-start gap-4">
               {/* Profile Image */}
-              <div className="size-[280px] overflow-hidden rounded-full lg:size-[400px]">
+              <div className="size-60 overflow-hidden rounded-full lg:size-80 relative">
                 <Image
                   src="/images/about-image.png"
-                  width={400}
-                  height={400}
+                  fill
                   alt="KEIJI UCHIDA"
-                  className="h-full w-full object-cover"
+                  className="object-cover"
                 />
               </div>
 
               {/* Name Section */}
               <div className="flex flex-col items-start">
-                <p
-                  className="text-[20px] font-normal text-[#1A202C] opacity-80"
-                  style={{ fontFamily: 'var(--font-noto-sans-jp)' }}
-                >
+                <p className="text-small font-noto font-medium text-main opacity-80">
                   うちだ けいじ
                 </p>
-                <h3
-                  className="text-[40px] font-semibold text-[#1A202C]"
-                  style={{ fontFamily: 'var(--font-lato)' }}
-                >
+                <h3 className="text-h3 font-lato font-semibold text-main">
                   KEIJI UCHIDA
                 </h3>
               </div>
 
               {/* Affiliation */}
-              <p
-                className="text-[24px] font-normal text-[#1A202C]"
-                style={{ fontFamily: 'var(--font-noto-sans-jp)' }}
-              >
+              <p className="text-h5 font-noto font-medium text-main">
                 長崎県立大学 / 経営学部4年
               </p>
 
               {/* Social Icons */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 lg:gap-4">
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon flex items-center justify-center bg-white"
+                  className="social-icon flex items-center justify-center bg-white size-8 lg:size-12"
                 >
-                  <Image src="/svgs/instagram-icon.svg" width={40} height={40} alt="Instagram" />
+                  <Image src="/svgs/instagram-icon.svg" width={40} height={40} alt="Instagram" className="w-6 h-6 lg:w-10 lg:h-10" />
                 </a>
                 <a
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon flex items-center justify-center bg-white"
+                  className="social-icon flex items-center justify-center bg-white size-8 lg:size-12"
                 >
-                  <Image src="/svgs/facebook-icon.svg" width={40} height={40} alt="Facebook" />
+                  <Image src="/svgs/facebook-icon.svg" width={40} height={40} alt="Facebook" className="w-6 h-6 lg:w-10 lg:h-10" />
                 </a>
                 <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon flex items-center justify-center bg-white"
+                  className="social-icon flex items-center justify-center bg-white size-8 lg:size-12"
                 >
-                  <Image src="/svgs/linkdein-icon.svg" width={40} height={40} alt="LinkedIn" />
+                  <Image src="/svgs/linkdein-icon.svg" width={40} height={40} alt="LinkedIn" className="w-6 h-6 lg:w-10 lg:h-10" />
                 </a>
                 <a
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon flex items-center justify-center bg-white"
+                  className="social-icon flex items-center justify-center bg-white size-8 lg:size-12"
                 >
-                  <Image src="/svgs/github-icon.svg" width={40} height={40} alt="GitHub" />
+                  <Image src="/svgs/github-icon.svg" width={40} height={40} alt="GitHub" className="w-6 h-6 lg:w-10 lg:h-10" />
                 </a>
               </div>
             </div>
 
             {/* Right Content */}
-            <div className="flex w-full max-w-2xl flex-col gap-10 text-[#1A202C]">
+            <div className="flex w-full max-w-2xl flex-col gap-8 text-main">
               {aboutContent.map((item, index) => (
                 <div key={index} className="flex flex-col gap-2">
-                  <h4
-                    className="text-[32px] font-bold leading-tight"
-                    style={{ fontFamily: 'var(--font-noto-sans-jp)' }}
-                  >
+                  <h4 className="text-h4 font-noto font-bold leading-tight">
                     {item.heading}
                   </h4>
-                  <p
-                    className="text-[15px] font-normal leading-relaxed opacity-85"
-                    style={{ fontFamily: 'var(--font-noto-sans-jp)' }}
-                  >
+                  <p className="text-body font-noto font-medium leading-relaxed opacity-85">
                     {item.text}
                   </p>
                 </div>

@@ -3,32 +3,23 @@ import CtaButton from './CtaButton';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-10 lg:py-16">
+    <section id="hero" className="relative overflow-hidden bg-white py-8 lg:py-16">
+      <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-6 lg:flex-row justify-center">
           {/* Left Content */}
           <div className="flex flex-col items-center lg:items-start gap-6 lg:gap-8 lg:max-w-xl">
             {/* Titles */}
             <div className="flex flex-col gap-1 text-center lg:text-left">
-              <h2
-                className="text-2xl lg:text-[48px] font-medium leading-tight"
-                style={{ fontFamily: 'var(--font-noto-sans-jp)' }}
-              >
+              <h2 className="text-hero-subtitle font-noto font-medium leading-tight">
                 その挑戦を
               </h2>
-              <h1
-                className="text-3xl lg:text-[80px] font-bold leading-tight"
-                style={{ fontFamily: 'var(--font-noto-sans-jp)' }}
-              >
-                <span className="text-[#E50012]">世界</span>が信じる形へ
+              <h1 className="text-display font-noto font-bold leading-tight">
+                <span className="text-primary-red">世界</span>が信じる形へ
               </h1>
             </div>
 
             {/* Description */}
-            <p
-              className="text-xs lg:text-lg font-normal leading-snug text-center lg:text-left"
-              style={{ fontFamily: 'var(--font-noto-sans-jp)' }}
-            >
+            <p className="text-body-lg font-noto font-medium leading-snug text-center lg:text-left">
               共に創り、共に走るパートナー
               <br />
               起業家・スタートアップのためのWebサイト制作
@@ -39,13 +30,13 @@ export default function Hero() {
           </div>
 
           {/* Right Image */}
-          <div className="relative">
+          <div className="relative size-70 lg:size-110">
             <Image
               src="/svgs/hero-image.svg"
-              width={600}
-              height={588}
+              fill
               alt="Sidekick Services"
               priority
+              className="object-contain"
             />
           </div>
         </div>
