@@ -14,22 +14,38 @@ const menuItems = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      
+      // スクロール位置が10px以上かチェック
+      setIsScrolled(currentScrollY > 10);
+      
+      // スクロール方向を判定
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // 下にスクロール & 100px以上スクロールしている → ヘッダーを隠す
+        setIsVisible(false);
+      } else {
+        // 上にスクロール or トップ付近 → ヘッダーを表示
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   return (
     <header
-      className={`sticky top-0 z-50 h-20 bg-white transition-all duration-300 ${
+      className={`fixed top-0 z-50 h-20 w-full bg-white transition-all duration-300 ${
         isScrolled ? 'bg-opacity-95 shadow-md' : 'bg-opacity-100'
-      }`}
+      } ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-6">
         {/* Logo */}
@@ -53,10 +69,10 @@ export default function Header() {
                 href={item.href}
                 className="flex flex-col items-center gap-1 transition-colors hover:text-primary-red"
               >
-                <span className="text-body font-lato font-medium">
+                <span className="text-nav font-lato font-bold">
                   {item.en}
                 </span>
-                <span className="text-xs-custom font-noto font-medium opacity-80">
+                <span className="text-xs-custom font-noto font-semibold opacity-80">
                   {item.jp}
                 </span>
               </a>
@@ -102,10 +118,10 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex flex-col gap-1 border-b border-gray-100 pb-4 transition-colors hover:text-primary-red"
               >
-                <span className="text-body font-lato font-regular">
+                <span className="text-nav font-lato font-bold">
                   {item.en}
                 </span>
-                <span className="text-xs-custom font-noto font-regular opacity-60">
+                <span className="text-xs-custom font-noto font-medium opacity-60">
                   {item.jp}
                 </span>
               </a>

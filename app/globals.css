@@ -7,7 +7,7 @@
   --main-font-color: #1A202C;
   --base-color: #ffffff;
   --deep-pink: #E34045;
-  --light-pink: #E88C8F
+  --light-pink: #E88C8F;
   
   /* Gradients */
   --gradient-metalic-red: linear-gradient(
@@ -57,6 +57,15 @@ body {
   font-weight: 700;
 }
 
+/* Lato Font Weight Fallbacks (Lato doesn't have 500, 600) */
+.font-lato.font-medium {
+  font-weight: 400;
+}
+
+.font-lato.font-semibold {
+  font-weight: 700;
+}
+
 /* Display (Hero Main Title) */
 .text-display {
   font-size: 44px;
@@ -83,7 +92,7 @@ body {
 
 /* Heading 2 (SERVICE) */
 .text-h2 {
-  font-size: 32px;
+  font-size: 48px;
   line-height: 1.2;
 }
 
@@ -141,6 +150,42 @@ body {
   }
 }
 
+/* Section Card Heading (Service/Flow card titles) */
+.text-section-card {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .text-section-card {
+    font-size: 24px;
+  }
+}
+
+/* Section Subtitle (Service/Flow subtitles) */
+.text-section-subtitle {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .text-section-subtitle {
+    font-size: 24px;
+  }
+}
+
+/* FAQ Question (FAQ questions) */
+.text-faq-question {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .text-faq-question {
+    font-size: 18px;
+  }
+}
+
 /* Body Large (Important Descriptions) */
 .text-body-lg {
   font-size: 16px;
@@ -165,6 +210,18 @@ body {
   }
 }
 
+/* Navigation Menu (Header) */
+.text-nav {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .text-nav {
+    font-size: 17px;
+  }
+}
+
 /* Small (Secondary Text) */
 .text-small {
   font-size: 14px;
@@ -179,8 +236,20 @@ body {
 
 /* Extra Small (Tiny Text) */
 .text-xs-custom {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.4;
+}
+
+/* Tag Text (Fixed 14px) */
+.text-tag {
+  font-size: 14px !important;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .text-tag {
+    font-size: 14px !important;
+  }
 }
 
 /* ===========================

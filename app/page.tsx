@@ -3,12 +3,17 @@ import Hero from "./components/Hero";
 import Service from "./components/Service";
 import About from "./components/About";
 import Pricing from "./components/Pricing";
+import Portfolio from "./components/Portfolio";
+import Flow from "./components/Flow";
+import FAQ from "./components/FAQ";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main className="min-h-screen">
+      <main className="min-h-screen pt-20">
         {/* Hero Section */}
         <Hero />
 
@@ -21,23 +26,21 @@ export default function Home() {
         {/* Pricing Section */}
         <Pricing />
 
-        {/* Other Sections - Placeholders */}
-        <section id="portfolio" className="flex h-screen items-center justify-center bg-gray-50">
-          <h2 className="text-3xl">Portfolio Section</h2>
-        </section>
+        {/* Portfolio Section */}
+        <Portfolio />
 
-        <section id="flow" className="flex h-screen items-center justify-center">
-          <h2 className="text-3xl">Flow Section</h2>
-        </section>
+        {/* Flow Section */}
+        <Flow />
 
-        <section id="faq" className="flex h-screen items-center justify-center bg-gray-50">
-          <h2 className="text-3xl">FAQ Section</h2>
-        </section>
+        {/* FAQ Section */}
+        <FAQ />
 
-        <section id="contact" className="flex h-screen items-center justify-center">
-          <h2 className="text-3xl">Contact Section</h2>
-        </section>
+        {/* Contact Section */}
+        <Contact />
       </main>
+
+      {/* Footer */}
+      <Footer />
     </>
   );
 }

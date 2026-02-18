@@ -1,4 +1,5 @@
 import React from 'react';
+import CtaButton from './CtaButton';
 
 interface PricingFeature {
   text: string;
@@ -16,7 +17,7 @@ interface PricingPlan {
 
 const pricingPlans: PricingPlan[] = [
   {
-    name: 'Starter Plan',
+    name: 'スタンダードプラン',
     description: '起業・新規事業の立ち上げに必要な、本格的なWebサイトを構築したい方向けのプラン',
     price: '55,000円',
     duration: '納期：2週間～2か月',
@@ -32,7 +33,7 @@ const pricingPlans: PricingPlan[] = [
     ctaText: 'まずは無料相談',
   },
   {
-    name: 'Student Launch Plan',
+    name: '学生応援プラン',
     description: '在学中の起業・新規事業チャレンジを特別価格で応援する学生限定プラン',
     price: '33,000円',
     duration: '納期：2週間～2か月',
@@ -108,10 +109,7 @@ const Pricing: React.FC = () => {
             </p>
 
             {/* CTA Button */}
-            <button className="bg-metalic-red shine-effect relative text-white py-3 px-6 rounded-full font-bold text-body flex items-center justify-center gap-2 w-fit overflow-hidden">
-              {plan.ctaText}
-              <span className="text-h5">→</span>
-            </button>
+            <CtaButton size="large">{plan.ctaText}</CtaButton>
             </div>
           </div>
         ))}

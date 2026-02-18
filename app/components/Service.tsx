@@ -23,13 +23,13 @@ export default function Service() {
   return (
     <section id="service" className="relative overflow-hidden bg-white py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-4 lg:gap-8">
           {/* Section Header */}
           <div className="flex flex-col items-center gap-2 text-center">
-            <h2 className="text-h2 font-lato font-regular text-dark-red">
+            <h2 className="text-h2 font-lato font-bold text-main">
               SERVICE
             </h2>
-            <p className="text-h5 font-noto font-medium text-main">
+            <p className="text-section-subtitle font-noto font-medium text-main">
               起業家・新規事業のためのWebサイト制作
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function Service() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-4 rounded-xl bg-white p-6 text-center"
+                className="flex flex-col items-center gap-4 rounded-xl bg-white lg:p-6 text-center"
               >
                 <Image
                   src={service.icon}
@@ -48,7 +48,7 @@ export default function Service() {
                   alt={service.title}
                   className="object-contain"
                 />
-                <h3 className="text-h5 font-noto font-semibold text-main">
+                <h3 className="text-section-card font-noto font-semibold text-main">
                   {service.title}
                 </h3>
                 <p className="text-body font-noto font-medium text-main opacity-85 leading-relaxed">
