@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 import CtaButton from './CtaButton';
 
 interface PricingFeature {
@@ -38,7 +41,7 @@ const pricingPlans: PricingPlan[] = [
     price: '33,000円',
     duration: '納期：2週間～2か月',
     features: [
-      { text: 'Starter Planの全機能が利用可能' },
+      { text: 'スタンダードプランの全機能が利用可能' },
       { text: '学生証の提示で40%OFF' },
       { text: '在学中の起業・事業活動が対象' },
       { text: '柔軟な支払いスケジュール対応' },
@@ -50,18 +53,28 @@ const pricingPlans: PricingPlan[] = [
 
 const Pricing: React.FC = () => {
   return (
-    <section className="bg-deep-pink py-8 px-6 lg:py-16 lg:px-20">
+    <section id="pricing" className="bg-deep-pink py-8 px-6 lg:py-16 lg:px-20">
       {/* Section Header */}
-      <h2 className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8">
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8"
+      >
         PRICING
-      </h2>
+      </motion.h2>
 
       {/* Pricing Cards Container */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 lg:items-end">
         {pricingPlans.map((plan, index) => (
-          <div
+          <motion.div
             key={index}
-            className={`bg-linear-to-r from-[#8B0000] via-[#E50012] to-[#8B0000] p-1.5 rounded-3xl shadow-lg transition-transform ${
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className={`bg-linear-to-r from-[#8B0000] via-[#E50012] to-[#8B0000] p-1.5 rounded-3xl shadow-lg ${
               index === 1 ? 'lg:scale-85 lg:origin-bottom' : ''
             }`}
           >
@@ -109,9 +122,9 @@ const Pricing: React.FC = () => {
             </p>
 
             {/* CTA Button */}
-            <CtaButton size="large">{plan.ctaText}</CtaButton>
+            <CtaButton size="large" href="#contact">{plan.ctaText}</CtaButton>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

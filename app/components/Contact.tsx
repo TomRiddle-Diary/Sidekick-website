@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import CtaButton from './CtaButton';
 
 export default function Contact() {
@@ -50,12 +51,24 @@ export default function Contact() {
     <section id="contact" className="relative overflow-hidden bg-light-pink py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         {/* Section Title */}
-        <h2 className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8"
+        >
           CONTACT
-        </h2>
+        </motion.h2>
 
         {/* White Background Container */}
-        <div className="rounded-xl bg-white px-6 py-8 lg:px-12 lg:py-10 max-w-3xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="rounded-xl bg-white px-6 py-8 lg:px-12 lg:py-10 max-w-3xl mx-auto"
+        >
           {/* Section Header */}
           <div className="flex flex-col items-start gap-4 mb-8 lg:mb-10">
             <p className="text-section-subtitle font-noto font-semibold text-main">
@@ -80,7 +93,7 @@ export default function Contact() {
                   required
                   value={formData.inquiryType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                  className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                 >
                   <option value="consultation">無料相談（30分程度）</option>
                   <option value="project">制作依頼・お見積もり</option>
@@ -100,7 +113,7 @@ export default function Contact() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                  className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                   placeholder="山田太郎"
                 />
               </div>
@@ -117,7 +130,7 @@ export default function Contact() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                  className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                   placeholder="example@email.com"
                 />
               </div>
@@ -133,7 +146,7 @@ export default function Contact() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                  className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                   placeholder="株式会社〇〇 / 個人事業主"
                 />
               </div>
@@ -179,7 +192,7 @@ export default function Contact() {
                       name="consultationMethod"
                       value={formData.consultationMethod}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                      className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                     >
                       <option value="">選択してください</option>
                       <option value="online">オンライン（Google Meet）</option>
@@ -203,7 +216,7 @@ export default function Contact() {
                       name="plan"
                       value={formData.plan}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                      className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                     >
                       <option value="">選択してください</option>
                       <option value="starter">Starter Plan（55,000円）</option>
@@ -223,7 +236,7 @@ export default function Contact() {
                       name="existingSite"
                       value={formData.existingSite}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                      className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                     >
                       <option value="">選択してください</option>
                       <option value="new">新規作成</option>
@@ -241,7 +254,7 @@ export default function Contact() {
                       name="pageCount"
                       value={formData.pageCount}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                      className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                     >
                       <option value="">選択してください</option>
                       <option value="1">1ページ</option>
@@ -261,7 +274,7 @@ export default function Contact() {
                       name="maintenancePlan"
                       value={formData.maintenancePlan}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                      className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                     >
                       <option value="">選択してください</option>
                       <option value="interested">希望する</option>
@@ -280,7 +293,7 @@ export default function Contact() {
                       name="deadline"
                       value={formData.deadline}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                      className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                     >
                       <option value="">選択してください</option>
                       <option value="flexible">特になし・急いでない</option>
@@ -299,7 +312,7 @@ export default function Contact() {
                       name="priority"
                       value={formData.priority}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                      className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                     >
                       <option value="">選択してください</option>
                       <option value="design">デザイン性</option>
@@ -336,7 +349,7 @@ export default function Contact() {
               </div>
             </form>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import CtaButton from './CtaButton';
 
 const flowSteps = [
@@ -40,26 +43,58 @@ const flowSteps = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 export default function Flow() {
   return (
     <section id="flow" className="relative overflow-hidden bg-white py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-4 lg:gap-8">
           {/* Section Header */}
-          <div className="flex flex-col items-center gap-2 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center gap-2 text-center"
+          >
             <h2 className="text-h2 font-lato font-bold text-main">
               FLOW
             </h2>
             <p className="text-section-subtitle font-noto font-medium text-main">
               制作の流れ
             </p>
-          </div>
+          </motion.div>
 
           {/* Flow Cards */}
-          <div className="grid w-full grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-4">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid w-full grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-4"
+          >
             {flowSteps.map((step, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={cardVariants}
+                transition={{ duration: 0.6 }}
                 className="flex flex-col items-center gap-4 rounded-xl bg-white lg:p-6 text-center h-full"
               >
                 {/* Icon Container with fixed height */}
@@ -79,12 +114,19 @@ export default function Flow() {
                 <p className="text-body font-noto font-medium text-main opacity-85 leading-relaxed">
                   {step.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* CTA Button */}
-          <CtaButton size="large">まずは無料相談</CtaButton>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <CtaButton size="large" href="#contact">まずは無料相談</CtaButton>
+          </motion.div>
         </div>
       </div>
     </section>

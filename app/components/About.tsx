@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const aboutContent = [
   {
@@ -15,20 +18,46 @@ const aboutContent = [
   },
 ];
 
+const textVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 export default function About() {
   return (
     <section id="about" className="relative overflow-hidden bg-dark-red py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         {/* Section Title */}
-        <h2 className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8"
+        >
           ABOUT
-        </h2>
+        </motion.h2>
 
         {/* Content */}
-        <div className="rounded-xl bg-white px-6 py-8 lg:px-20 lg:py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="rounded-xl bg-white px-6 py-8 lg:px-20 lg:py-12"
+        >
           <div className="flex flex-col items-start gap-8 lg:flex-row lg:gap-28">
             {/* Left Content */}
-            <div className="flex flex-col items-start gap-4">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-col items-start gap-4"
+            >
               {/* Profile Image */}
               <div className="size-60 overflow-hidden rounded-full lg:size-80 relative">
                 <Image
@@ -89,23 +118,31 @@ export default function About() {
                   <Image src="/svgs/github-icon.svg" width={40} height={40} alt="GitHub" className="w-6 h-6 lg:w-10 lg:h-10" />
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Content */}
             <div className="flex w-full max-w-2xl flex-col gap-8 text-main">
               {aboutContent.map((item, index) => (
-                <div key={index} className="flex flex-col gap-2">
+                <motion.div
+                  key={index}
+                  variants={textVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="flex flex-col gap-2"
+                >
                   <h4 className="text-h4 font-noto font-bold leading-tight">
                     {item.heading}
                   </h4>
                   <p className="text-body font-noto font-medium leading-relaxed opacity-85">
                     {item.text}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -13,10 +13,10 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { name: 'Instagram', icon: FaInstagram, href: '#', color: 'hover:text-[#E4405F]' },
-    { name: 'Facebook', icon: FaFacebook, href: '#', color: 'hover:text-[#1877F2]' },
-    { name: 'LinkedIn', icon: FaLinkedin, href: '#', color: 'hover:text-[#0A66C2]' },
-    { name: 'GitHub', icon: FaGithub, href: '#', color: 'hover:text-white' },
+    { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/keijiuchida001/', color: 'hover:text-[#E4405F]' },
+    { name: 'Facebook', icon: FaFacebook, href: 'https://www.facebook.com/keiji0913', color: 'hover:text-[#1877F2]' },
+    { name: 'LinkedIn', icon: FaLinkedin, href: 'https://www.linkedin.com/in/keijiuchida/', color: 'hover:text-[#0A66C2]' },
+    { name: 'GitHub', icon: FaGithub, href: 'https://github.com/TomRiddle-Diary', color: 'hover:text-white' },
   ];
 
   return (
@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="flex items-center">
             <a
               href="#"
-              className="text-h5 font-bold text-primary-red"
+              className="inline-block text-h5 font-medium text-primary-red transition-all duration-300 hover:scale-110 hover:rotate-3"
               style={{ fontFamily: 'var(--font-alfa-slab-one)' }}
             >
               Sidekick

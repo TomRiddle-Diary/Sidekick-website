@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface FAQItem {
   question: string;
@@ -20,6 +21,24 @@ const parseAnswerText = (text: string) => {
     }
     return part;
   });
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
 };
 
 const faqData: FAQItem[] = [
@@ -97,28 +116,42 @@ export default function FAQ() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-8">
           {/* Section Header */}
-          <div className="flex flex-col items-center gap-2 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center gap-2 text-center"
+          >
             <h2 className="text-h2 font-lato font-bold text-main">
               FAQ
             </h2>
             <p className="text-section-subtitle font-noto font-medium text-main">
               よくある質問
             </p>
-          </div>
+          </motion.div>
 
           {/* FAQ List */}
-          <div className="w-full max-w-3xl border border-gray-600 rounded-3xl overflow-hidden lg:px-16 lg:py-4">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="w-full max-w-3xl border border-gray-600 rounded-3xl overflow-hidden lg:px-16 lg:py-4"
+          >
             {faqData.map((faq, index) => (
-              <div
+              <motion.div
                 key={index}
-                className={`transition-all duration-300 hover:bg-gray-50 ${
+                variants={itemVariants}
+                transition={{ duration: 0.5 }}
+                className={`hover:bg-gray-50 ${
                   index !== faqData.length - 1 ? 'border-b border-gray-300' : ''
                 }`}
               >
                 {/* Question */}
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-start gap-4 p-6 text-left transition-colors hover:bg-gray-50"
+                  className="w-full flex items-start gap-4 p-6 text-left hover:bg-gray-50"
                 >
                   <span className="text-faq-question font-noto font-medium text-main shrink-0">
                     Q
@@ -162,9 +195,9 @@ export default function FAQ() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

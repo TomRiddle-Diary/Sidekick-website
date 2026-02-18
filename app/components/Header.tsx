@@ -52,7 +52,7 @@ export default function Header() {
         <div className="p-2.5">
           <a
             href="#"
-            className="text-h5 font-bold text-primary-red"
+            className="inline-block text-h5 font-medium text-primary-red transition-all duration-300 hover:scale-110 hover:rotate-3"
             style={{ fontFamily: 'var(--font-alfa-slab-one)' }}
           >
             Sidekick
@@ -67,7 +67,7 @@ export default function Header() {
               <a
                 key={item.en}
                 href={item.href}
-                className="flex flex-col items-center gap-1 transition-colors hover:text-primary-red"
+                className="relative flex flex-col items-center gap-1 transition-all duration-300 hover:text-primary-red hover:-translate-y-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary-red after:transition-all after:duration-300 hover:after:w-full"
               >
                 <span className="text-nav font-lato font-bold">
                   {item.en}
@@ -80,7 +80,7 @@ export default function Header() {
           </nav>
 
           {/* CTA Button */}
-          <CtaButton size="small">無料相談</CtaButton>
+          <CtaButton size="small" href="#contact">無料相談</CtaButton>
         </div>
 
         {/* Mobile Menu Button */}
@@ -116,7 +116,7 @@ export default function Header() {
                 key={item.en}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex flex-col gap-1 border-b border-gray-100 pb-4 transition-colors hover:text-primary-red"
+                className="relative flex flex-col gap-1 border-b border-gray-100 pb-4 transition-all duration-300 hover:text-primary-red hover:-translate-y-1 after:absolute after:bottom-3 after:left-0 after:h-0.5 after:w-0 after:bg-primary-red after:transition-all after:duration-300 hover:after:w-full"
               >
                 <span className="text-nav font-lato font-bold">
                   {item.en}
@@ -126,9 +126,6 @@ export default function Header() {
                 </span>
               </a>
             ))}
-            <div className="mt-2">
-              <CtaButton size="small">無料相談</CtaButton>
-            </div>
           </nav>
         </div>
       )}
