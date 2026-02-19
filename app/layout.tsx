@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   title: "Sidekick｜長崎の起業家・スタートアップのためのWeb制作",
   description: "長崎県で挑戦する起業家を応援。創業前・創業直後の事業を、投資家や顧客に伝わる本格的なWebサイトで支援。経営とIT、両方の視点から共創するパートナーです。",
   keywords: ["長崎", "Web制作", "ホームページ制作", "起業家", "スタートアップ", "創業支援", "新規事業", "Webサイト制作"],
-  authors: [{ name: "内田 慧二 (Keiji Uchida)" }],
+  authors: [{ name: "打田 圭志 (Keiji Uchida)" }],
   creator: "Sidekick",
   publisher: "Sidekick",
   formatDetection: {
@@ -104,10 +104,6 @@ export default function RootLayout({
 
   return (
     <>
-      <Head>
-        <link rel="icon" href="/svgs/hero-image.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/svgs/hero-image.svg" />
-      </Head>
       <html lang="ja">
         <head>
           <Script
