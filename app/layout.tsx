@@ -105,8 +105,8 @@ export default function RootLayout({
   return (
     <>
       <Head>
-        <link rel="icon" href="/portfolio-site/public/svgs/hero-image.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/portfolio-site/public/svgs/hero-image.svg.svg" />
+        <link rel="icon" href="/svgs/hero-image.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/svgs/hero-image.svg" />
       </Head>
       <html lang="ja">
         <head>

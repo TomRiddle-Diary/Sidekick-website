@@ -1,16 +1,11 @@
 import { ImageResponse } from 'next/og'
  
 export const runtime = 'edge'
-export const alt = 'その挑戦を、世界が信じる形へ - Sidekick｜長崎から起業家・スタートアップを支えるWeb制作'
+export const alt = 'その挑戦を、世界が信じる形へ - Sidekick | 長崎から起業家・スタートアップを支えるWeb制作'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
  
 export default async function Image() {
-  // Noto Sans JPフォントを取得
-  const notoSansJP = await fetch(
-    new URL('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap')
-  ).then((res) => res.arrayBuffer())
-
   return new ImageResponse(
     (
       <div
@@ -24,10 +19,10 @@ export default async function Image() {
           backgroundColor: 'white',
           backgroundImage: 'linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%)',
           padding: '80px',
-          fontFamily: '"Noto Sans JP"',
+          fontFamily: 'Noto Sans JP, sans-serif',
         }}
       >
-        {/* Main Content - Heroと同じデザイン */}
+        {/* Main Content */}
         <div 
           style={{ 
             display: 'flex', 
@@ -36,7 +31,7 @@ export default async function Image() {
             gap: '8px',
           }}
         >
-          {/* サブタイトル */}
+          {/* Subheading */}
           <h2 
             style={{ 
               fontSize: 72, 
@@ -48,7 +43,7 @@ export default async function Image() {
             その挑戦を
           </h2>
           
-          {/* メインタイトル */}
+          {/* Main Heading */}
           <h1 
             style={{ 
               fontSize: 120, 
@@ -78,7 +73,20 @@ export default async function Image() {
           起業家・スタートアップのためのWebサイト制作
         </p>
 
-        {/* Logo/Brand */}
+        {/* Decorative Image Replacement */}
+        <div
+          style={{
+            marginTop: 50,
+            width: 300,
+            height: 300,
+            backgroundImage: 'url(/svgs/hero-image.svg)',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+          }}
+        />
+
+        {/* Branding */}
         <div 
           style={{ 
             position: 'absolute', 
