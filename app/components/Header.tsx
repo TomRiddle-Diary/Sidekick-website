@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react';
 import CtaButton from './CtaButton';
 
 const menuItems = [
-  { en: 'Service', jp: '事業内容', href: '#service' },
-  { en: 'About', jp: '自己紹介', href: '#about' },
-  { en: 'Pricing', jp: '料金プラン', href: '#pricing' },
-  { en: 'Portfolio', jp: '制作実績', href: '#portfolio' },
-  { en: 'Flow', jp: '制作の流れ', href: '#flow' },
-  { en: 'FAQ', jp: 'よくある質問', href: '#faq' },
+  { en: 'Service', jp: '事業内容', href: '/#service' },
+  { en: 'About', jp: '自己紹介', href: '/#about' },
+  { en: 'Pricing', jp: '料金プラン', href: '/#pricing' },
+  { en: 'Portfolio', jp: '制作実績', href: '/#portfolio' },
+  { en: 'Flow', jp: '制作の流れ', href: '/#flow' },
+  { en: 'FAQ', jp: 'よくある質問', href: '/#faq' },
 ];
 
 export default function Header() {
@@ -51,7 +51,7 @@ export default function Header() {
         {/* Logo */}
         <div className="p-2.5">
           <a
-            href="#"
+            href="/"
             className="inline-block text-h5 font-medium text-primary-red transition-all duration-300 hover:scale-110 hover:rotate-3"
             style={{ fontFamily: 'var(--font-alfa-slab-one)' }}
           >
@@ -80,7 +80,7 @@ export default function Header() {
           </nav>
 
           {/* CTA Button */}
-          <CtaButton size="small" href="#contact">無料相談</CtaButton>
+          <CtaButton size="small" href="/#contact">無料相談</CtaButton>
         </div>
 
         {/* Mobile Menu Button */}

@@ -4,12 +4,12 @@ import { HiEnvelope, HiMapPin } from 'react-icons/hi2';
 
 export default function Footer() {
   const navigation = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Service', href: '#service' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/#about' },
+    { name: 'Service', href: '/#service' },
+    { name: 'Portfolio', href: '/#portfolio' },
+    { name: 'FAQ', href: '/#faq' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   const socialLinks = [
@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex items-center">
             <a
-              href="#"
+              href="/"
               className="inline-block text-h5 font-medium text-primary-red transition-all duration-300 hover:scale-110 hover:rotate-3"
               style={{ fontFamily: 'var(--font-alfa-slab-one)' }}
             >
@@ -85,6 +85,14 @@ export default function Footer() {
 
           {/* Divider */}
           <div className="w-full border-t border-white/20"></div>
+
+          {/* 個人情報の取り扱いリンク */}
+          <Link
+            href="/privacy-policy"
+            className="text-body font-noto font-medium text-white/70 hover:text-white transition-colors underline"
+          >
+            個人情報の取り扱い
+          </Link>
 
           {/* Copyright */}
           <p className="text-small font-noto font-medium text-white/60">

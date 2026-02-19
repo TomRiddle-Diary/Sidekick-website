@@ -16,17 +16,71 @@ export default function Contact() {
     consultationMethod: '',
     // 制作依頼用
     plan: '',
-    existingSite: '',
-    pageCount: '',
+    budget: '',
     maintenancePlan: '',
     deadline: '',
     priority: '',
+    expectations: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+  const [agreeToPrivacyPolicy, setAgreeToPrivacyPolicy] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // フォーム送信処理は後で実装
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'お問い合わせを送信しました！自動返信メールをご確認ください。',
+        });
+        // フォームをリセット
+        setFormData({
+          inquiryType: 'consultation',
+          name: '',
+          email: '',
+          company: '',
+          message: '',
+          consultationTopics: [],
+          consultationMethod: '',
+          plan: '',
+          budget: '',
+          maintenancePlan: '',
+          deadline: '',
+          priority: '',
+          expectations: '',
+        });
+        setAgreeToPrivacyPolicy(false);
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: '送信に失敗しました。もう一度お試しください。',
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'エラーが発生しました。もう一度お試しください。',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -161,11 +215,12 @@ export default function Contact() {
                     </label>
                     <div className="flex flex-col gap-2">
                       {[
-                        '事業の構想・アイデア相談',
-                        'Webサイトの必要性の相談',
-                        '自作方法の相談',
-                        '予算・費用感の相談',
-                        'デザイン・機能の相談',
+                        'Webサイトが必要かどうか迷っている',
+                        'Webサイトを作る効果やメリットが知りたい',
+                        '集客効果（SEO）について知りたい',
+                        '自分で作るか、依頼するか迷っている',
+                        '予算やコストの相場が知りたい',
+                        'デザインや機能について相談したい',
                         'その他',
                       ].map((topic) => (
                         <label key={topic} className="flex items-center gap-2 cursor-pointer">
@@ -206,68 +261,32 @@ export default function Contact() {
               {/* 制作依頼の追加フィールド */}
               {formData.inquiryType === 'project' && (
                 <>
-                  {/* 希望プラン */}
+                  {/* Webサイト制作にかけられる予算感 */}
                   <div>
-                    <label htmlFor="plan" className="block text-body font-noto font-semibold text-main mb-2">
-                      希望プラン
+                    <label htmlFor="budget" className="block text-body font-noto font-semibold text-main mb-2">
+                      Webサイト制作にかけられる予算感
                     </label>
                     <select
-                      id="plan"
-                      name="plan"
-                      value={formData.plan}
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
                       onChange={handleChange}
                       className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                     >
                       <option value="">選択してください</option>
-                      <option value="starter">Starter Plan（55,000円）</option>
-                      <option value="student">学生応援プラン（33,000円）</option>
-                      <option value="undecided">未定</option>
-                      <option value="custom">その他（カスタム）</option>
-                    </select>
-                  </div>
-
-                  {/* 既存サイトの有無 */}
-                  <div>
-                    <label htmlFor="existingSite" className="block text-body font-noto font-semibold text-main mb-2">
-                      既存サイトの有無
-                    </label>
-                    <select
-                      id="existingSite"
-                      name="existingSite"
-                      value={formData.existingSite}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
-                    >
-                      <option value="">選択してください</option>
-                      <option value="new">新規作成</option>
-                      <option value="renewal">リニューアル</option>
-                    </select>
-                  </div>
-
-                  {/* 希望するページ数 */}
-                  <div>
-                    <label htmlFor="pageCount" className="block text-body font-noto font-semibold text-main mb-2">
-                      希望するページ数
-                    </label>
-                    <select
-                      id="pageCount"
-                      name="pageCount"
-                      value={formData.pageCount}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
-                    >
-                      <option value="">選択してください</option>
-                      <option value="1">1ページ</option>
-                      <option value="3-5">3-5ページ</option>
-                      <option value="5+">5ページ以上</option>
-                      <option value="undecided">未定</option>
+                      <option value="under-30k">3万円以下</option>
+                      <option value="30k-50k">3万円〜5万円</option>
+                      <option value="50k-100k">5万円〜10万円</option>
+                      <option value="100k-200k">10万円〜20万円</option>
+                      <option value="over-200k">20万円以上</option>
+                      <option value="undecided">未定・相談したい</option>
                     </select>
                   </div>
 
                   {/* 保守運用プラン */}
                   <div>
                     <label htmlFor="maintenancePlan" className="block text-body font-noto font-semibold text-main mb-2">
-                      月額での保守運用・支援の希望
+                      月額での保守・運用サポートプランがあれば欲しいと思いますか？
                     </label>
                     <select
                       id="maintenancePlan"
@@ -277,8 +296,8 @@ export default function Contact() {
                       className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                     >
                       <option value="">選択してください</option>
-                      <option value="interested">希望する</option>
-                      <option value="not-interested">希望しない</option>
+                      <option value="interested">はい</option>
+                      <option value="not-interested">いいえ</option>
                       <option value="maybe">詳しく聞いてから決めたい</option>
                     </select>
                   </div>
@@ -302,10 +321,10 @@ export default function Contact() {
                     </select>
                   </div>
 
-                  {/* 特に重視すること */}
+                  {/* Webサイトを作る目的 */}
                   <div>
                     <label htmlFor="priority" className="block text-body font-noto font-semibold text-main mb-2">
-                      特に重視すること
+                      Webサイトを作る目的
                     </label>
                     <select
                       id="priority"
@@ -315,11 +334,33 @@ export default function Contact() {
                       className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
                     >
                       <option value="">選択してください</option>
-                      <option value="design">デザイン性</option>
-                      <option value="seo">SEO対策</option>
-                      <option value="mobile">スマホ対応</option>
-                      <option value="easy-update">更新しやすさ</option>
-                      <option value="budget">予算重視</option>
+                      <option value="branding">ブランディング（名刺代わり）</option>
+                      <option value="lead-generation">集客・顧客獲得</option>
+                      <option value="information">情報発信</option>
+                      <option value="sales">商品・サービスの販売</option>
+                      <option value="recruitment">採用・求人</option>
+                      <option value="other">その他</option>
+                    </select>
+                  </div>
+
+                  {/* 期待していること */}
+                  <div>
+                    <label htmlFor="expectations" className="block text-body font-noto font-semibold text-main mb-2">
+                      自分に対して最も期待していること
+                    </label>
+                    <select
+                      id="expectations"
+                      name="expectations"
+                      value={formData.expectations}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 lg:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent transition-all"
+                    >
+                      <option value="">選択してください</option>
+                      <option value="design">デザイン</option>
+                      <option value="functionality">機能性・拡張性</option>
+                      <option value="speed">納品までの速さ</option>
+                      <option value="cost">コストパフォーマンス</option>
+                      <option value="support">サポート対応</option>
                     </select>
                   </div>
                 </>
@@ -342,9 +383,51 @@ export default function Contact() {
                 />
               </div>
 
+              {/* 個人情報の取り扱い同意 */}
+              <div className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="agreeToPrivacyPolicy"
+                  checked={agreeToPrivacyPolicy}
+                  onChange={(e) => setAgreeToPrivacyPolicy(e.target.checked)}
+                  className="mt-1 w-4 h-4 text-primary-red focus:ring-primary-red rounded cursor-pointer"
+                  required
+                />
+                <label htmlFor="agreeToPrivacyPolicy" className="text-body font-noto text-main cursor-pointer">
+                  <a
+                    href="/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-red hover:underline font-semibold"
+                  >
+                    個人情報の取り扱い
+                  </a>
+                  について同意の上送信します。 <span className="text-primary-red">*</span>
+                </label>
+              </div>
+
+              {/* 送信状態メッセージ */}
+              {submitStatus.type && (
+                <div
+                  className={`p-4 rounded-lg ${
+                    submitStatus.type === 'success'
+                      ? 'bg-green-50 text-green-800 border border-green-200'
+                      : 'bg-red-50 text-red-800 border border-red-200'
+                  }`}
+                >
+                  <p className="text-body font-noto font-medium">{submitStatus.message}</p>
+                </div>
+              )}
+
               <div className="flex justify-center mt-2">
                 <div className="transform scale-110 lg:scale-125">
-                  <CtaButton size="large">送信する</CtaButton>
+                  <CtaButton
+                    size="large"
+                    type="submit"
+                    disabled={isSubmitting || !agreeToPrivacyPolicy}
+                  >
+                    {isSubmitting ? '送信中...' : '送信する'}
+                  </CtaButton>
                 </div>
               </div>
             </form>

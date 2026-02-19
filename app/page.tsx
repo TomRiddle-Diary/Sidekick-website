@@ -1,3 +1,7 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Service from "./components/Service";
@@ -8,39 +12,59 @@ import Flow from "./components/Flow";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Loading from "./components/Loading";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // 3秒後にローディングを終了
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-      <Header />
-      <main className="min-h-screen pt-20">
-        {/* Hero Section */}
-        <Hero />
+      <AnimatePresence>
+        {isLoading && <Loading key="loading" />}
+      </AnimatePresence>
 
-        {/* Service Section */}
-        <Service />
+      {!isLoading && (
+        <>
+          <Header />
+          <main className="min-h-screen pt-20">
+            {/* Hero Section */}
+            <Hero />
 
-        {/* About Section */}
-        <About />
+            {/* Service Section */}
+            <Service />
 
-        {/* Pricing Section */}
-        <Pricing />
+            {/* About Section */}
+            <About />
 
-        {/* Portfolio Section */}
-        <Portfolio />
+            {/* Pricing Section */}
+            <Pricing />
 
-        {/* Flow Section */}
-        <Flow />
+            {/* Portfolio Section */}
+            <Portfolio />
 
-        {/* FAQ Section */}
-        <FAQ />
+            {/* Flow Section */}
+            <Flow />
 
-        {/* Contact Section */}
-        <Contact />
-      </main>
+            {/* FAQ Section */}
+            <FAQ />
 
-      {/* Footer */}
-      <Footer />
+            {/* Contact Section */}
+            <Contact />
+          </main>
+
+          {/* Footer */}
+          <Footer />
+        </>
+      )}
     </>
   );
 }

@@ -5,14 +5,18 @@ interface CtaButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
-export default function CtaButton({ size = 'small', children, onClick, href }: CtaButtonProps) {
+export default function CtaButton({ size = 'small', children, onClick, href, type = 'button', disabled = false }: CtaButtonProps) {
   const textClass = size === 'large' ? 'text-body-lg' : 'text-small';
   const paddingSize = size === 'large' ? 'px-6 py-2.5 lg:px-7 lg:py-2.5' : 'px-5 py-2 lg:px-7 lg:py-2.5';
   const iconSize = size === 'large' ? 14 : 12;
 
-  const className = `bg-metalic-red shine-effect relative flex w-fit items-center gap-1.5 lg:gap-2 overflow-hidden rounded-[30px] ${paddingSize} ${textClass} font-noto font-bold text-white transition-transform hover:scale-105`;
+  const className = `bg-metalic-red shine-effect relative flex w-fit items-center gap-1.5 lg:gap-2 overflow-hidden rounded-[30px] ${paddingSize} ${textClass} font-noto font-bold text-white transition-transform ${
+    disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'
+  }`;
 
   const content = (
     <>
@@ -30,7 +34,7 @@ export default function CtaButton({ size = 'small', children, onClick, href }: C
   }
 
   return (
-    <button onClick={onClick} className={className}>
+    <button onClick={onClick} type={type} disabled={disabled} className={className}>
       {content}
     </button>
   );

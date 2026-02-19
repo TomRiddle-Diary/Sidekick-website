@@ -119,7 +119,7 @@ export default function Portfolio() {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-start gap-4 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]"
+                className="flex flex-col items-center lg:items-start gap-4 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]"
               >
                 {content}
               </motion.a>
@@ -128,7 +128,7 @@ export default function Portfolio() {
                 key={index}
                 variants={cardVariants}
                 transition={{ duration: 0.6 }}
-                className="flex flex-col items-start gap-4 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]"
+                className="flex flex-col items-center lg:items-start gap-4 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]"
               >
                 {content}
               </motion.div>
