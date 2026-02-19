@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP, Lato, Alfa_Slab_One } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import Head from 'next/head';
+import { GA_TRACKING_ID } from '../lib/gtag';
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -101,19 +103,43 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="ja">
-      <head>
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </head>
-      <body
-        className={`${notoSansJP.variable} ${lato.variable} ${alfaSlabOne.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <>
+      <Head>
+        <link rel="icon" href="/svgs/hero-image.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/svgs/hero-image.svg" />
+      </Head>
+      <html lang="ja">
+        <head>
+          <Script
+            id="structured-data"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          />
+        </head>
+        <body
+          className={`${notoSansJP.variable} ${lato.variable} ${alfaSlabOne.variable} antialiased`}
+        >
+          <Script
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_TRACKING_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+            }}
+          />
+          {children}
+        </body>
+      </html>
+    </>
   );
 }
