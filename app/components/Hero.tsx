@@ -6,7 +6,7 @@ import CtaButton from './CtaButton';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden bg-white py-4 lg:py-16">
+    <section id="hero" aria-labelledby="hero-heading" className="relative overflow-hidden bg-white py-4 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-12 lg:gap-6 lg:flex-row justify-center">
           {/* Left Content */}
@@ -30,6 +30,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
+                id="hero-heading"
                 className="text-display font-noto font-bold leading-tight"
               >
                 <span className="text-primary-red">世界</span>が信じる形へ
@@ -43,7 +44,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-body-lg font-noto font-medium leading-snug text-center lg:text-left"
             >
-              共に創り、共に走るパートナー
+              長崎から挑戦者を支える
               <br />
               起業家・スタートアップのためのWebサイト制作
             </motion.p>
@@ -68,7 +69,7 @@ export default function Hero() {
             <Image
               src="/svgs/hero-image.svg"
               fill
-              alt="Sidekick Services"
+              alt="長崎の起業家・スタートアップ向けWeb制作サービス Sidekick"
               priority
               className="object-contain"
             />

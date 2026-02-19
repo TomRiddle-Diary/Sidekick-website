@@ -83,6 +83,16 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Service Area */}
+          <div className="flex flex-col items-center gap-2 text-center max-w-2xl">
+            <p className="text-body font-noto font-medium text-white/80">
+              <span className="font-bold">対応エリア：</span>長崎県全域（長崎市、佐世保市、諫早市など）
+            </p>
+            <p className="text-small font-noto font-medium text-white/60">
+              ※オンライン相談で全国対応可能
+            </p>
+          </div>
+
           {/* Divider */}
           <div className="w-full border-t border-white/20"></div>
 

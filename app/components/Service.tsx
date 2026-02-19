@@ -42,7 +42,7 @@ const cardVariants = {
 
 export default function Service() {
   return (
-    <section id="service" className="relative overflow-hidden bg-white py-8 lg:py-16">
+    <section id="service" aria-labelledby="service-heading" className="relative overflow-hidden bg-white py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-4 lg:gap-8">
           {/* Section Header */}
@@ -53,7 +53,7 @@ export default function Service() {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-center gap-2 text-center"
           >
-            <h2 className="text-h2 font-lato font-bold text-main">
+            <h2 className="text-h2 font-lato font-bold text-main" id="service-heading">
               SERVICE
             </h2>
             <p className="text-section-subtitle font-noto font-medium text-main">
@@ -80,7 +80,7 @@ export default function Service() {
                   src={service.icon}
                   width={100}
                   height={100}
-                  alt={service.title}
+                  alt={`${service.title} - スタートアップ向けWeb制作サービス`}
                   className="object-contain"
                 />
                 <h3 className="text-section-card font-noto font-semibold text-main">

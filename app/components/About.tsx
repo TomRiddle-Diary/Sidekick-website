@@ -14,7 +14,21 @@ const aboutContent = [
   },
   {
     heading: '学生最後の年、2026年を共創に捧げる',
-    text: 'これまで北村製茶様や洋食屋ヒーローズ様など、一歩踏み出す方々の顔を作ってきました。 来春からは新規事業開発のプロフェッショナル集団である株式会社Relicにエンジニアとして参画します。個人事業主として全力で動けるこの1年間、一人でも多くの起業家と共創し、社会に価値ある足跡を残したいと考えています。',
+    text: (
+      <>
+        これまで北村製茶様や洋食屋ヒーローズ様など、一歩踏み出す方々の顔を作ってきました。
+        来春からは新規事業開発のプロフェッショナル集団である
+        <a 
+          href="https://relic.co.jp/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-primary-red underline hover:opacity-80 transition-opacity"
+        >
+          株式会社Relic
+        </a>
+        にエンジニアとして参画します。個人事業主として全力で動けるこの1年間、一人でも多くの起業家と共創し、社会に価値ある足跡を残したいと考えています。
+      </>
+    ),
   },
 ];
 
@@ -28,7 +42,7 @@ const textVariants = {
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-dark-red py-8 lg:py-16">
+    <section id="about" aria-labelledby="about-heading" className="relative overflow-hidden bg-dark-red py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         {/* Section Title */}
         <motion.h2
@@ -36,6 +50,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
+          id="about-heading"
           className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8"
         >
           ABOUT
@@ -63,7 +78,7 @@ export default function About() {
                 <Image
                   src="/images/about-image.png"
                   fill
-                  alt="KEIJI UCHIDA"
+                  alt="打田圭志 - Sidekick代表、長崎でスタートアップ支援を行うWebデベロッパー"
                   className="object-cover"
                 />
               </div>

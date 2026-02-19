@@ -53,13 +53,14 @@ const pricingPlans: PricingPlan[] = [
 
 const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="bg-deep-pink py-8 px-6 lg:py-16 lg:px-20">
+    <section id="pricing" aria-labelledby="pricing-heading" className="bg-deep-pink py-8 px-6 lg:py-16 lg:px-20">
       {/* Section Header */}
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
+        id="pricing-heading"
         className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8"
       >
         PRICING

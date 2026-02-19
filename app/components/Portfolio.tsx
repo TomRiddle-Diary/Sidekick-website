@@ -51,13 +51,14 @@ const cardVariants = {
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="bg-light-pink py-8 px-6 lg:py-16 lg:px-20">
+    <section id="portfolio" aria-labelledby="portfolio-heading" className="bg-light-pink py-8 px-6 lg:py-16 lg:px-20">
       {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
+        id="portfolio-heading"
         className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8"
       >
         PORTFOLIO

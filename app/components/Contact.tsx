@@ -102,7 +102,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-light-pink py-8 lg:py-16">
+    <section id="contact" aria-labelledby="contact-heading" className="relative overflow-hidden bg-light-pink py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         {/* Section Title */}
         <motion.h2
@@ -110,6 +110,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
+          id="contact-heading"
           className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8"
         >
           CONTACT

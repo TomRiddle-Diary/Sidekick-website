@@ -112,7 +112,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative overflow-hidden bg-white py-8 lg:py-16">
+    <section id="faq" aria-labelledby="faq-heading" className="relative overflow-hidden bg-white py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-8">
           {/* Section Header */}
@@ -123,7 +123,7 @@ export default function FAQ() {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-center gap-2 text-center"
           >
-            <h2 className="text-h2 font-lato font-bold text-main">
+            <h2 className="text-h2 font-lato font-bold text-main" id="faq-heading">
               FAQ
             </h2>
             <p className="text-section-subtitle font-noto font-medium text-main">
