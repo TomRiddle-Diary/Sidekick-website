@@ -14,19 +14,19 @@ const portfolioItems: PortfolioItem[] = [
   {
     name: 'Sidekick',
     image: '/images/sidekick.png',
-    tags: ['個人事業主', 'webデザイン'],
+    tags: ['2026/2','個人事業主', 'webデザイン'],
     url: '#',
   },
   {
     name: "Dining your Hero's",
     image: '/images/heros.png',
-    tags: ['個人事業主', '洋食レストラン'],
+    tags: ['2025/12','個人事業主', '洋食レストラン'],
     url: 'https://diningyourheros.com/',
   },
   {
     name: '北村製茶',
     image: '/images/kitamuraseicha.png',
-    tags: ['法人', 'お茶農家'],
+    tags: ['2025/7','法人', 'お茶農家'],
     url: 'https://kitamura-seicha.jp/',
   },
 ];
