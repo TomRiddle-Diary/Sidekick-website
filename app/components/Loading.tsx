@@ -122,18 +122,6 @@ export default function Loading({ onComplete }: LoadingProps = {}) {
           </svg>
         </div>
 
-        {/* メッセージ */}
-        <motion.div
-          className="flex flex-col items-center gap-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.5 }}
-        >
-          <h2 className="text-h4 font-lato font-bold text-main">
-            Loading...
-          </h2>
-        </motion.div>
-
         {/* ドット */}
         <motion.div
           className="flex gap-2"
