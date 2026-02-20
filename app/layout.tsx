@@ -90,12 +90,13 @@ export default function RootLayout({
     },
     "serviceType": [
       "Webサイト制作",
+      "ウェブサイト制作",
       "ホームページ制作",
       "UXデザイン",
       "Web開発",
       "起業支援"
     ],
-    "priceRange": "¥33,000 - ¥55,000",
+    "priceRange": "¥55,000 - ¥110,000",
     "audience": {
       "@type": "Audience",
       "audienceType": "起業家、スタートアップ、新規事業立ち上げ"
