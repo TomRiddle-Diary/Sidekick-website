@@ -115,8 +115,8 @@ export default function Portfolio() {
               <motion.a
                 key={index}
                 variants={cardVariants}
-                transition={{ duration: 0.6 }}
-                whileHover={{ opacity: 0.8, y: 4 }}
+                transition={{ duration: 0.25 }}
+                whileHover={{ opacity: 0.8, y: 8 }}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"

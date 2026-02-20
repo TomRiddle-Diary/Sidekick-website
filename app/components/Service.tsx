@@ -6,19 +6,19 @@ import CtaButton from './CtaButton';
 
 const services = [
   {
-    icon: '/svgs/tactics.svg',
-    title: 'Strategic UX Design',
-    description: '事業モデルを深く読み解き、ユーザーとビジネスの両方を満たす体験を構築。 独自のブランド価値を最大化します。',
+    icon: '/svgs/figma.svg',
+    title: 'Strategic Branding',
+    description: '単なる見た目の良さではなく、事業モデルと起業家の想いを深く読み解き、その事業が市場でどう見られるべきかをデザインに落とし込みます。Figmaをはじめとする最新ツールを駆使し、ターゲットの感性に響きつつ、メッセージが直感的に伝わる「独自のブランド体験」を構築します。',
   },
   {
-    icon: '/svgs/engeneering.svg',
-    title: 'Agile Web Engineering',
-    description: '柔軟な技術スタックで、高速かつ拡張性の高いサイトを実現。 市場の変化にすぐ対応できる基盤をお届けします。',
+    icon: '/svgs/copilot.svg',
+    title: 'AI & Architecture',
+    description: '最新のAI技術を開発プロセスに組み込むことで、コーディング時間を大幅に効率化。その分、創業者との対話や要件定義、デザインの細部に至るまで、人間が思考すべき「本質的な品質向上」に時間を投資します。モダンな技術スタックを採用し、事業成長に伴う機能追加にも柔軟に応える高い拡張性を担保します。',
   },
   {
-    icon: '/svgs/finance.svg',
-    title: 'Financial Insight Integration',
-    description: '会計・金融の視点を取り入れ、事業の数字が映えるサイト体験をデザイン。 投資家や顧客に信頼できる事業として伝わる基盤を築きます。',
+    icon: '/svgs/partnership.svg',
+    title: 'Sidekick Strategy & Trust',
+    description: '単なるWeb制作者ではなく、会計・財務の視点を持つ「事業の伴走者」として関わります。創業期の起業家と同じ目線でビジネスモデルを解釈し、マーケットに対してその価値を正しく、かつ力強く示す基盤を作成していきます。',
   },
 ];
 
@@ -78,8 +78,8 @@ export default function Service() {
               >
                 <Image
                   src={service.icon}
-                  width={100}
-                  height={100}
+                  width={120}
+                  height={120}
                   alt={`${service.title} - スタートアップ向けWeb制作サービス`}
                   className="object-contain"
                 />
@@ -100,7 +100,7 @@ export default function Service() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <CtaButton size="large" href="#contact">無料で相談してみる</CtaButton>
+            <CtaButton size="large" href="#contact">料金プランを見る</CtaButton>
           </motion.div>
         </div>
       </div>
