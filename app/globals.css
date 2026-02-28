@@ -68,13 +68,13 @@ body {
 
 /* Display (Hero Main Title) */
 .text-display {
-  font-size: 44px;
+  font-size: 38px;
   line-height: 1.1;
 }
 
 @media (min-width: 1024px) {
   .text-display {
-    font-size: 80px;
+    font-size: 76px;
   }
 }
 
@@ -104,13 +104,13 @@ body {
 
 /* Hero Subtitle (その挑戦を) */
 .text-hero-subtitle {
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1.2;
 }
 
 @media (min-width: 1024px) {
   .text-hero-subtitle {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 
@@ -189,12 +189,11 @@ body {
 /* Body Large (Important Descriptions) */
 .text-body-lg {
   font-size: 16px;
-  line-height: 1.6;
 }
 
 @media (min-width: 1024px) {
   .text-body-lg {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import CtaButton from './CtaButton';
 
 interface PortfolioItem {
   name: string;
@@ -61,7 +62,7 @@ export default function Portfolio() {
         id="portfolio-heading"
         className="text-h1 font-lato font-bold text-white text-start mb-6 lg:mb-8"
       >
-        PORTFOLIO
+        WORKS
       </motion.h2>
 
       {/* Portfolio Cards Container */}
@@ -136,6 +137,10 @@ export default function Portfolio() {
             );
           })}
         </motion.div>
+        {/* CTA Button: もっと見る */}
+        <div className="flex justify-center mt-8 lg:mt-16">
+          <CtaButton size="large" href="#portfolio">もっと見る</CtaButton>
+        </div>
       </motion.div>
     </section>
   );

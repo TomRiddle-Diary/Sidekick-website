@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Service from "./components/Service";
+import BusinessOverview from "./components/Business-overview";
 import About from "./components/About";
 import Pricing from "./components/Pricing";
 import Portfolio from "./components/Portfolio";
@@ -39,6 +40,12 @@ export default function Home() {
             {/* Hero Section */}
             <Hero />
 
+            {/* Portfolio Section */}
+            <Portfolio />
+
+            {/* Business Overview Section */}
+            <BusinessOverview />
+
             {/* Service Section */}
             <Service />
 
@@ -47,9 +54,6 @@ export default function Home() {
 
             {/* Pricing Section */}
             <Pricing />
-
-            {/* Portfolio Section */}
-            <Portfolio />
 
             {/* Flow Section */}
             <Flow />
