@@ -14,6 +14,7 @@ import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
+import Recommend from "./components/Recommend";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,6 +46,9 @@ export default function Home() {
 
             {/* Business Overview Section */}
             <BusinessOverview />
+
+            {/* Recommend Section */}
+            <Recommend />
 
             {/* Service Section */}
             <Service />

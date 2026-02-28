@@ -71,7 +71,7 @@ export default function Portfolio() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="bg-white rounded-xl px-6 py-8 lg:px-20 lg:py-12"
+        className="bg-white rounded-xl px-6 py-8 lg:px-20 lg:py-14"
       >
         <motion.div
           variants={containerVariants}
