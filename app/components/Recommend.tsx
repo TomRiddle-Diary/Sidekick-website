@@ -62,6 +62,23 @@ export default function Recommend() {
           </div>
         </div>
       </div>
+        {/* 画像クレジット表示 */}
+        <p
+          style={{
+            position: 'absolute',
+            right: '1rem',
+            bottom: '1rem',
+            fontSize: '0.8em',
+            color: '#888',
+            zIndex: 3,
+            background: 'rgba(255,255,255,0.6)',
+            padding: '2px 8px',
+            borderRadius: '6px',
+            pointerEvents: 'none'
+          }}
+        >
+          ©SASEBO
+        </p>
     </section>
   );
 }

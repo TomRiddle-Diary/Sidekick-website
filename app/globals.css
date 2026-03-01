@@ -200,7 +200,6 @@ body {
 /* Body (Normal Text) */
 .text-body {
   font-size: 14px;
-  line-height: 1.6;
 }
 
 @media (min-width: 1024px) {

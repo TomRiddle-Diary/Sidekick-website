@@ -50,15 +50,6 @@ export default function Home() {
             {/* Recommend Section */}
             <Recommend />
 
-            {/* Service Section */}
-            <Service />
-
-            {/* About Section */}
-            <About />
-
-            {/* Pricing Section */}
-            <Pricing />
-
             {/* Flow Section */}
             <Flow />
 
