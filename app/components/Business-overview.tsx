@@ -55,6 +55,36 @@ export default function BusinessOverview() {
           <CtaButton size="large" href="#service">詳しく見る</CtaButton>
         </div>
       </motion.div>
+
+      {/* Content Box 2 */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="bg-white rounded-xl px-6 py-8 lg:px-20 lg:py-14 max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 mt-8 lg:mt-16"
+      >
+        {/* Service Image */}
+        <div className="w-full lg:w-1/2 flex justify-center">
+          <Image
+            src="/images/service-other.png"
+            width={500}
+            height={500}
+            alt="その他サービス"
+            className="object-contain"
+          />
+        </div>
+        {/* Service Text */}
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start gap-6 lg:gap-10">
+          <h3 className="text-h3 font-lato font-bold text-main text-center lg:text-left">
+            その他サービス
+          </h3>
+          <p className="text-body-lg font-noto font-medium text-main text-center lg:text-left leading-[2.5]">
+            Webサイト制作に留まらず、LP・漫画LP・チラシ・名刺・ロゴ制作まで幅広く対応します。言葉では伝えにくい事業の魅力を「漫画」で分かりやすく可視化。複数の業者に依頼する手間を省き、窓口一つで御社のブランド価値を最大化します。
+          </p>
+          <CtaButton size="large" href="#service">詳しく見る</CtaButton>
+        </div>
+      </motion.div>
     </section>
   );
 }
