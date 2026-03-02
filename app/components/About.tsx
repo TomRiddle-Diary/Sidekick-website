@@ -42,7 +42,7 @@ const textVariants = {
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-heading" className="relative overflow-hidden bg-dark-red py-8 lg:py-16">
+    <section id="about" aria-labelledby="about-heading" className="relative overflow-hidden bg-deep-pink py-8 lg:py-16">
       <div className="mx-auto max-w-6xl px-6">
         {/* Section Title */}
         <motion.h2

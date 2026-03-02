@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import About from '../components/About';
 
 export default function AboutPage() {
   return (
@@ -71,7 +72,7 @@ export default function AboutPage() {
                 <h2 className="text-[32px] lg:text-[40px] font-lato font-bold leading-tight" style={{color: '#E04B7C'}}>
                   Vision
                 </h2>
-                <p className="text-[18px] lg:text-[24px] font-noto font-medium text-main leading-[200%]">
+                <p className="text-[18px] lg:text-[24px] font-noto font-medium text-main leading-loose">
                   長崎・佐世保の素晴らしい事業がWebサイトを通じて正しく評価され、<br />
                   次世代へと活気が受け継がれる未来
                 </p>
@@ -82,7 +83,7 @@ export default function AboutPage() {
                 <h2 className="text-[32px] lg:text-[40px] font-lato font-bold leading-tight" style={{color: '#FF8989'}}>
                   Value
                 </h2>
-                <p className="text-[18px] lg:text-[24px] font-noto font-medium text-main leading-[200%]">
+                <p className="text-[18px] lg:text-[24px] font-noto font-medium text-main leading-loose">
                   対話を通じて事業への熱意を汲み取り、<br className='hidden lg:inline' />
                   技術を通じて正しく届ける、<br />
                   作って終わらないITパートナーとして共に歩む
@@ -92,6 +93,9 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* 自己紹介セクション */}
+      <About />
 
       <Footer />
     </main>
