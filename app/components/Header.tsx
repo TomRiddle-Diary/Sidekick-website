@@ -4,12 +4,10 @@ import { useState, useEffect } from 'react';
 import CtaButton from './CtaButton';
 
 const menuItems = [
-  { en: 'Service', jp: '事業内容', href: '/#service' },
   { en: 'About', jp: '自己紹介', href: '/about' },
-  { en: 'Pricing', jp: '料金プラン', href: '/#pricing' },
-  { en: 'Portfolio', jp: '制作実績', href: '/#portfolio' },
-  { en: 'Flow', jp: '制作の流れ', href: '/#flow' },
-  { en: 'FAQ', jp: 'よくある質問', href: '/#faq' },
+  { en: 'Service', jp: '事業内容', href: '/service' },
+  { en: 'Works', jp: '制作実績', href: '/works' },
+  { en: 'FAQ', jp: 'よくある質問', href: '/faq' },
 ];
 
 export default function Header() {

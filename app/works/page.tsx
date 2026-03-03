@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import CtaButton from './CtaButton';
-import ProjectModal, { ProjectDetails } from './ProjectModal';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import ProjectModal, { ProjectDetails } from '../components/ProjectModal';
 
 interface PortfolioItem {
   name: string;
@@ -204,7 +205,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -217,7 +218,7 @@ const cardVariants = {
   },
 };
 
-export default function Portfolio() {
+export default function WorksPage() {
   const [selectedProject, setSelectedProject] = useState<ProjectDetails | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -232,8 +233,34 @@ export default function Portfolio() {
   };
 
   return (
-    <>
-      <section id="works" aria-labelledby="portfolio-heading" className="bg-light-pink py-8 px-6 lg:py-16 lg:px-20">
+    <main>
+      <Header />
+
+      {/* ページタイトルセクション */}
+      <section className="bg-white pt-20 pb-8 lg:pt-32 lg:pb-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center gap-2 text-center"
+          >
+            <h1 className="text-h2 font-lato font-bold text-main">
+              WORKS
+            </h1>
+            <p className="text-section-subtitle font-noto font-medium text-main">
+              制作実績
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      
+
+      {/* Worksセクション */}
+      <section className="bg-light-pink py-8 px-6 lg:py-16 lg:px-20">
+
         {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -246,12 +273,11 @@ export default function Portfolio() {
           WORKS
         </motion.h2>
 
-        {/* Portfolio Cards Container */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6 }}
           className="bg-white rounded-xl px-6 py-8 lg:px-20 lg:py-14"
         >
           <motion.div
@@ -261,7 +287,7 @@ export default function Portfolio() {
             viewport={{ once: true, margin: "-100px" }}
             className="flex flex-wrap justify-center gap-8 lg:gap-12"
           >
-            {portfolioItems.slice(0, 6).map((item, index) => {
+            {portfolioItems.map((item, index) => {
               const content = (
                 <>
                   {/* Portfolio Image */}
@@ -307,12 +333,10 @@ export default function Portfolio() {
               );
             })}
           </motion.div>
-          {/* CTA Button: もっと見る */}
-          <div className="flex justify-center mt-8 lg:mt-16">
-            <CtaButton size="large" href="/works">もっと見る</CtaButton>
-          </div>
         </motion.div>
       </section>
+
+      <Footer />
 
       {/* Project Modal */}
       <ProjectModal
@@ -320,6 +344,6 @@ export default function Portfolio() {
         onClose={closeModal}
         project={selectedProject}
       />
-    </>
+    </main>
   );
 }

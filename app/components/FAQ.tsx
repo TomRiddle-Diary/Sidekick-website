@@ -103,7 +103,11 @@ const faqData: FAQItem[] = [
   },
 ];
 
-export default function FAQ() {
+interface FAQProps {
+  showHeader?: boolean;
+}
+
+export default function FAQ({ showHeader = true }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -115,20 +119,22 @@ export default function FAQ() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-8">
           {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col items-center gap-2 text-center"
-          >
-            <h2 className="text-h2 font-lato font-bold text-main" id="faq-heading">
-              FAQ
-            </h2>
-            <p className="text-section-subtitle font-noto font-medium text-main">
-              よくある質問
-            </p>
-          </motion.div>
+          {showHeader && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col items-center gap-2 text-center"
+            >
+              <h2 className="text-h2 font-lato font-bold text-main" id="faq-heading">
+                FAQ
+              </h2>
+              <p className="text-section-subtitle font-noto font-medium text-main">
+                よくある質問
+              </p>
+            </motion.div>
+          )}
 
           {/* FAQ List */}
           <motion.div

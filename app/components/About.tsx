@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const aboutContent = [
+const aboutContentUchida = [
   {
     heading: '世の中には、まだ見ぬ面白い挑戦があふれている',
     text: '大学2年から独学でプログラミングの勉強を始め、初めて制作した北村製茶様のwebサイト。そこで目の当たりにしたのは、世界へお茶を輸出する素晴らしい事業と、ITの不在によるあまりにも大きな機会損失でした。面白い挑戦をしている人を、もっと世の中に知ってもらいたい。それが、私の活動の原点です。',
@@ -32,6 +32,21 @@ const aboutContent = [
   },
 ];
 
+const aboutContentTakahashi = [
+  {
+    heading: '「言葉にできない魅力」を、漫画の力で可視化する',
+    text: '佐世保でWeb制作に携わり10年以上。二児の母として、地域の温かさに触れながら歩んできました。私の強みは、20年の漫画キャリアを活かし、士業や採用、教育といった「説明が難しい分野」を直感的に分かりやすく伝えることです。単なるWeb制作に留まらず、お客様の事業の「差別化ポイント」をストーリーとして描き出し、一目で伝わる形へと変換します。',
+  },
+  {
+    heading: '手描き×AIが紡ぐ、心に響くストーリーデザイン',
+    text: '最新のAI漫画技術と、長年培った手描きの技術を融合させることで、インパクトと温かみを両立させています。私が大切にしているのは、単なる情報の羅列ではなく、読者の心に残る「間」や「空気感」です。要件定義からデザイン、そしてWordPress等の実装（コーディング）まで、Web制作の全工程をワンストップで完結できるからこそ、ブレのない一貫したメッセージをお届けできます。'
+  },
+  {
+    heading: '「今あるもの」から未来を創る、一歩踏み出す相棒として',
+    text: '現在はWeb制作会社に勤務しながら、独立という新しいステージに挑戦しています。一人で道を切り拓く厳しさを実感する日々ですが、先日参加したセミナーで学んだ「エフェクチュエーション（今ある資源で未来を創る）」という考え方に深く共感しています。ビジネス交流会など地元の繋がりを大切に、大学生である打田さんの若きビジネス視点と私の経験を掛け合わせ、佐世保の事業に価値ある足跡を残していきたいと考えています。',
+  },
+];
+
 const textVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -56,7 +71,7 @@ export default function About() {
           ABOUT
         </motion.h2>
 
-        {/* Content */}
+        {/* Content - Uchida */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,7 +152,94 @@ export default function About() {
 
             {/* Right Content */}
             <div className="flex w-full max-w-2xl flex-col gap-8 text-main">
-              {aboutContent.map((item, index) => (
+              {aboutContentUchida.map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={textVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="flex flex-col gap-2"
+                >
+                  <h4 className="text-h4 font-noto font-bold leading-tight">
+                    {item.heading}
+                  </h4>
+                  <p className="text-body font-noto font-medium leading-relaxed opacity-85">
+                    {item.text}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Content - Takahashi */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="rounded-xl bg-white px-6 py-8 lg:px-20 lg:py-12 mt-6 lg:mt-8"
+        >
+          <div className="flex flex-col items-start gap-8 lg:flex-row lg:gap-28">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="flex flex-col items-start gap-4"
+            >
+              {/* Profile Image */}
+              <div className="size-60 overflow-hidden rounded-full lg:size-80 relative">
+                <Image
+                  src="/images/icon-takahashi.jpg"
+                  fill
+                  alt="高橋紀子 - Webクリエーター、漫画LPデザイナー"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Name Section */}
+              <div className="flex flex-col items-start">
+                <p className="text-small font-noto font-medium text-main opacity-80">
+                  たかはし のりこ
+                </p>
+                <h3 className="text-h3 font-lato font-semibold text-main">
+                  NORIKO TAKAHASHI
+                </h3>
+              </div>
+
+              {/* Affiliation */}
+              <p className="text-h5 font-noto font-medium text-main">
+                Webクリエーター / 漫画LPデザイナー
+              </p>
+
+              {/* Social Icons */}
+              <div className="flex items-center gap-3 lg:gap-4">
+                <a
+                  href="https://www.instagram.com/takahashi_norik_web/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon flex items-center justify-center bg-white size-8 lg:size-12"
+                >
+                  <Image src="/svgs/instagram-icon.svg" width={40} height={40} alt="Instagram" className="w-6 h-6 lg:w-10 lg:h-10" />
+                </a>
+                <a
+                  href="https://www.facebook.com/setobaa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon flex items-center justify-center bg-white size-8 lg:size-12"
+                >
+                  <Image src="/svgs/facebook-icon.svg" width={40} height={40} alt="Facebook" className="w-6 h-6 lg:w-10 lg:h-10" />
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Right Content */}
+            <div className="flex w-full max-w-2xl flex-col gap-8 text-main">
+              {aboutContentTakahashi.map((item, index) => (
                 <motion.div
                   key={index}
                   variants={textVariants}

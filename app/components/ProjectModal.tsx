@@ -8,6 +8,7 @@ export interface ProjectDetails {
   name: string;
   url?: string;
   heroImage: string;
+  creator: string;
   overview: string;
   challenge?: string;
   target?: string;
@@ -97,6 +98,16 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                     fill
                     className="object-contain"
                   />
+                </div>
+
+                {/* 制作者 */}
+                <div className="flex items-center gap-2">
+                  <span className="text-body font-noto font-semibold text-main">
+                    制作者:
+                  </span>
+                  <span className="text-body font-noto text-main">
+                    {project.creator}
+                  </span>
                 </div>
 
                 {/* 2. 概要・こだわりなど */}
