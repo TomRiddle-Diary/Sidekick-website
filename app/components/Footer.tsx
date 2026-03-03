@@ -5,7 +5,7 @@ import { HiEnvelope, HiMapPin } from 'react-icons/hi2';
 export default function Footer() {
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/#about' },
+    { name: 'About', href: '/about' },
     { name: 'Service', href: '/#service' },
     { name: 'Portfolio', href: '/#portfolio' },
     { name: 'FAQ', href: '/#faq' },

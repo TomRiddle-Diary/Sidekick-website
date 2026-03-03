@@ -56,14 +56,21 @@ export default function AboutPage() {
             style={{ backgroundBlendMode: 'normal' }}
           >
             <div className="flex flex-col items-center gap-12 lg:gap-16 text-center">
+              {/* MVVタイトル */}
+              <h2 className="text-h1 font-lato font-bold leading-tight">
+                <span style={{color: '#B5454D'}}>M</span>
+                <span style={{color: '#E04B7C'}}>V</span>
+                <span style={{color: '#FF8989'}}>V</span>
+              </h2>
+
               {/* Mission */}
               <div className="flex flex-col gap-4 lg:gap-6">
                 <h2 className="text-[32px] lg:text-[40px] font-lato font-bold leading-tight" style={{color: '#B5454D'}}>
                   Mission
                 </h2>
                 <p className="text-[18px] lg:text-[24px] font-noto font-medium text-main leading-loose">
-                  地域事業の高齢化・人手不足による機会損失をゼロにし、<br />
-                  事業の誇りと経営者の時間を守り抜く
+                  一つでも多くの挑戦を<br />
+                  一人でも多くの人に届けたい
                 </p>
               </div>
 
@@ -73,7 +80,8 @@ export default function AboutPage() {
                   Vision
                 </h2>
                 <p className="text-[18px] lg:text-[24px] font-noto font-medium text-main leading-loose">
-                  長崎・佐世保の素晴らしい事業がWebサイトを通じて正しく評価され、<br />
+                  長崎・佐世保の素晴らしい事業が、 <br />
+                  Webサイトを通じて正しく評価され、<br />
                   次世代へと活気が受け継がれる未来
                 </p>
               </div>
