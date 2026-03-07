@@ -20,8 +20,8 @@ interface PricingPlan {
 
 const pricingPlans: PricingPlan[] = [
   {
-    name: 'MVP Launch プラン',
-    description: 'アイデアを素早く形にし、市場での検証を最優先に進めたい方向けのプラン。',
+    name: 'ライトプラン',
+    description: 'まずはWebサイトを作って、お客様に見てもらいたい方向けのプラン。',
     price: '55,000円',
     duration: '納期：2週間～1か月',
     features: [
@@ -37,8 +37,8 @@ const pricingPlans: PricingPlan[] = [
     ctaText: 'まずは無料相談',
   },
   {
-    name: 'Business Growth プラン',
-    description: '投資家や銀行、顧客への信頼を確立し、さらなる事業拡大を加速させたい方向けのプラン。',
+    name: 'スタンダードプラン',
+    description: 'しっかりしたWebサイトで、お客様からの信頼を高めたい方向けのプラン。',
     price: '110,000円',
     duration: '納期：1か月～2か月',
     features: [
@@ -125,7 +125,7 @@ const Pricing: React.FC = () => {
             </p>
 
             {/* CTA Button */}
-            <CtaButton size="large" href="#contact">{plan.ctaText}</CtaButton>
+            <CtaButton size="large" href="/#contact">{plan.ctaText}</CtaButton>
             </div>
           </motion.div>
         ))}

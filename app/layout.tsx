@@ -24,9 +24,9 @@ const alfaSlabOne = Alfa_Slab_One({
 });
 
 export const metadata: Metadata = {
-  title: "Sidekick｜起業家・スタートアップのためのWeb制作",
-  description: "長崎県で挑戦する起業家を応援。創業前・創業直後の事業を、投資家や顧客に伝わる本格的なWebサイトで支援。経営とIT、両方の視点から共創するパートナーです。",
-  keywords: ["長崎", "Web制作", "ホームページ制作", "起業家", "スタートアップ", "創業支援", "新規事業", "Webサイト制作"],
+  title: "Sidekick｜事業を伝えるWebサイト制作",
+  description: "ビジネスの価値を正しく伝えるWebサイトを制作。経営者・個人事業主の挑戦を、デザインと技術で形にします。集客・採用・信頼構築まで一貫サポート。",
+  keywords: ["Web制作", "ホームページ制作", "Webサイト制作", "Webデザイン", "事業サイト", "コーポレートサイト"],
   authors: [{ name: "打田 圭志 (Keiji Uchida)" }],
   creator: "Sidekick",
   publisher: "Sidekick",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Sidekick｜起業家・スタートアップのためのWeb制作",
-    description: "長崎県で挑戦する起業家を応援。創業前・創業直後の事業を、投資家や顧客に伝わる本格的なWebサイトで支援。",
+    title: "Sidekick｜事業を伝えるWebサイト制作",
+    description: "ビジネスの価値を正しく伝えるWebサイトを制作。経営者・個人事業主の挑戦を、デザインと技術で形にします。",
     url: "https://sidekick-web.com",
     siteName: "Sidekick",
     locale: "ja_JP",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sidekick｜起業家・スタートアップのためのWeb制作",
-    description: "長崎県で挑戦する起業家を応援。創業前・創業直後の事業を、投資家や顧客に伝わる本格的なWebサイトで支援。",
+    title: "Sidekick｜事業を伝えるWebサイト制作",
+    description: "ビジネスの価値を正しく伝えるWebサイトを制作。経営者・個人事業主の挑戦を、デザインと技術で形にします。",
   },
   robots: {
     index: true,

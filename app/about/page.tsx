@@ -81,9 +81,9 @@ export default function AboutPage() {
                   Vision
                 </h2>
                 <p className="text-[18px] lg:text-[24px] font-noto font-medium text-main leading-loose">
-                  長崎・佐世保の素晴らしい事業が、 <br />
-                  Webサイトを通じて正しく評価され、<br />
-                  次世代へと活気が受け継がれる未来
+                  挑戦する人を孤立させず<br />
+                  みんなが応援し、支える<br />
+                  やさしさに溢れた未来
                 </p>
               </div>
 

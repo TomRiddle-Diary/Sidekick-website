@@ -54,10 +54,10 @@ export default function Service() {
             className="flex flex-col items-center gap-2 text-center"
           >
             <h2 className="text-h2 font-lato font-bold text-main" id="service-heading">
-              SERVICE
+              FEATURE
             </h2>
             <p className="text-section-subtitle font-noto font-medium text-main">
-              起業家・新規事業のためのWebサイト制作
+              Sidekickの強み
             </p>
           </motion.div>
 
@@ -100,7 +100,7 @@ export default function Service() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <CtaButton size="large" href="#contact">料金プランを見る</CtaButton>
+            <CtaButton size="large" href="/#contact">まずは無料相談</CtaButton>
           </motion.div>
         </div>
       </div>

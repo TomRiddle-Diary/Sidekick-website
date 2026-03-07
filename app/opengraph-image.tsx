@@ -68,9 +68,9 @@ export default async function Image() {
             fontWeight: 500,
           }}
         >
-          長崎から挑戦者を支える
+          共に創り、共に走るパートナー
           <br />
-          起業家・スタートアップのためのWebサイト制作
+          Webサイト制作・運用管理
         </p>
 
         {/* Decorative Image Replacement */}

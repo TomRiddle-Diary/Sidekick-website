@@ -24,7 +24,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-hero-subtitle font-noto font-medium leading-tight"
               >
-                長崎・佐世保の事業を
+                その挑戦を
               </motion.h2>
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -33,7 +33,7 @@ export default function Hero() {
                 id="hero-heading"
                 className="text-display font-noto font-bold leading-tight"
               >
-                Webの力で<span className="text-primary-red">次世代へ</span>
+                <span className='text-primary-red'>世界</span>が信じる形へ
               </motion.h1>
             </div>
 
@@ -44,7 +44,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-body-lg font-noto font-medium text-center lg:text-left leading-relaxed"
             >
-              地域の事業に寄り添うパートナー 
+              共に創り、共に走るパートナー
               <br />
               Webサイト制作・運用管理
             </motion.p>
