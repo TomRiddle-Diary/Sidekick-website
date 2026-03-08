@@ -5,7 +5,7 @@ import CtaButton from './CtaButton';
 
 const menuItems = [
   { en: 'About', jp: '自己紹介', href: '/about' },
-  { en: 'Pricing', jp: '料金プラン', href: '/service' },
+  { en: 'Service', jp: '事業内容', href: '/service' },
   { en: 'Works', jp: '制作実績', href: '/works' },
   { en: 'FAQ', jp: 'よくある質問', href: '/faq' },
 ];
