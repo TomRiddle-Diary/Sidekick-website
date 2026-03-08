@@ -49,8 +49,8 @@ export default function BusinessOverview() {
             Webサイト制作
           </h3>
           <p className="text-body-lg font-noto font-medium text-main text-center lg:text-left leading-[2.5]">
-            Sidekickは、IT活用に課題を抱える長崎・佐世保の経営者、個人事業主のためのWebサイト制作事業です。<br className='hidden lg:inline' />
-            採用・集客・信頼の基盤となるWebサイトを制作し、日々の運用まで一貫してサポートします。
+            Sidekickは、IT活用に課題を抱える経営者、個人事業主のためのWebサイト制作事業です。
+            採用・集客・信頼の基盤となるWebサイトを制作し、日々の運用まで一貫してサポートします。サイトのリニューアルも大歓迎です。
           </p>
           <CtaButton size="large" href="/service">料金プランを見る</CtaButton>
         </div>

@@ -42,7 +42,7 @@ const pricingPlans: PricingPlan[] = [
     price: '110,000円',
     duration: '納期：1か月～2か月',
     features: [
-      { text: 'MVPの全機能' },
+      { text: 'ライトプランの全内容' },
       { text: '複数ページ構成（3～5p）' },
       { text: 'CMS（お知らせ・ブログの更新環境）' },
       { text: '多言語対応（英語など）' },
